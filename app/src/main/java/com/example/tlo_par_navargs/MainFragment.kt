@@ -5,10 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.example.tlo_par_navargs.databinding.FragmentMainBinding
 
 
 class MainFragment : Fragment() {
+
+    private lateinit var bindingMain : FragmentMainBinding
+    private var liczba: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +24,21 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        bindingMain = DataBindingUtil.inflate(inflater,
+        R.layout.fragment_main, container, false)
+
+
+        bindingMain.go2SecondB.setOnClickListener {
+            if (bindingMain.liczba.text.toString().isNotEmpty()) {
+                liczba = bindingMain.liczba.text.toString().toInt()
+                val action = MainFragmentDirections.actionPar2Second()
+                action.par = liczba
+                it.findNavController().navigate(action)
+            }
+
+        }
+
+        return bindingMain.root
     }
 
 }
