@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.navArgs
 import com.example.tlo_par_navargs.databinding.FragmentSecondBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 
 
 class SecondFragment : Fragment() {
@@ -31,6 +33,29 @@ class SecondFragment : Fragment() {
             false)
 
         bindingSecond.liczba.text = "0"
+
+
+        bindingSecond.threadB.setOnClickListener {
+            object : Thread() {
+                override fun run() {
+                    for (i in 0..100) {
+                        bindingSecond.threadPB.progress = i
+                        bindingSecond.threadTV.text = i.toString()
+                        sleep(500)
+                    }
+                }
+            }.start()
+        }
+
+        bindingSecond.coroutinedB.setOnClickListener {
+            GlobalScope.async {
+                for (i in 1..100) {
+                    bindingSecond.coroutinePB.progress = i
+                    bindingSecond.coroutineTV.text = i.toString()
+                    Thread.sleep(500)
+                }
+            }
+        }
 
         return bindingSecond.root
     }

@@ -28,5 +28,85 @@
             android:text="0"
             android:textSize="30sp" />
 
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/threadB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="start thread"/>
+
+            <TextView
+                android:id="@+id/threadTV"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:text="0"/>
+
+        </LinearLayout>
+
+
+
+        <ProgressBar
+            android:layout_margin="8dp"
+            android:id="@+id/threadPB"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="0"
+            android:background="#FF0000"
+            android:max="100"
+            android:min="0"/>
+
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/coroutinedB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="start coroutine"/>
+
+            <TextView
+                android:id="@+id/coroutineTV"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:text="0"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_margin="8dp"
+            android:id="@+id/coroutinePB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progress="0"
+            android:max="100"
+            android:min="0"
+            android:background="#0000FF"/>
+
+
+
     </LinearLayout>
 </layout>
