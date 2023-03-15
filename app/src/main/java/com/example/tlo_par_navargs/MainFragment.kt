@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.example.tlo_par_navargs.databinding.FragmentMainBinding
 
 

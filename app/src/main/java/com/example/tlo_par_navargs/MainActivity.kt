@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.example.tlo_par_navargs.databinding.ActivityMainBinding
 
 

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.navArgs
-import com.example.tlo_par_navargs.databinding.FragmentMainBinding
 import com.example.tlo_par_navargs.databinding.FragmentSecondBinding
 
 
