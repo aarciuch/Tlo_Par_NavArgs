@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.tlo_par_navargs.databinding.ActivityMainBinding
 
 
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+
         binding.b2SecondActivity.setOnClickListener {
             if (binding.zParametrem.isChecked) {
                 var inten1 = Intent(applicationContext, MainActivity2::class.java)
@@ -41,5 +44,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.nav_host_fragment_container)
+        return navController.navigateUp()
+    }
 }
