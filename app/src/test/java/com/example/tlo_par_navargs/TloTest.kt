@@ -9,9 +9,16 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class TloTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun test1 ()  {
+        val task1  = Tlo()
+        task1.s1()
+    }
+
+    @Test
+    fun test2() {
+        val task2 = Tlo()
+        task2.s2()
     }
 }
