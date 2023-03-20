@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.tlo_par_navargs.databinding.ActivityMainBinding
 
 
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+
+        val navController = this.findNavController(R.id.nav_host_fragment_container)
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
         binding.b2SecondActivity.setOnClickListener {
             if (binding.zParametrem.isChecked) {
